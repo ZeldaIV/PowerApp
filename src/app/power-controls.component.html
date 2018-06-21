@@ -1,0 +1,9 @@
+<div class="container">
+  <br/>
+  <br/>
+  <div class="row" >
+    <div class="col" id="controls" *ngFor="let location of powerLocations">
+        <app-power-control [powerLocation]="location"></app-power-control>
+    </div>    
+  </div>
+</div>

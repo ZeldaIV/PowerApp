@@ -1,0 +1,18 @@
+<div class="card border-light bg-light mb-3" style="width: 25rem;" *ngIf="powerLocation">
+  <div class="card-header">{{powerLocation.name}}</div>
+  <h5 class="card-title">Operation</h5>
+  <div class="row flex-row flex-nowrap align-items-center">
+    <div class="mr-auto ml-4 align-self-baselines">
+        <p>{{powerLocation.heatingNodeName}}</p>
+    </div>  
+    <div class="p-4 align-self-baseline">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons" role="group">
+            <label class="btn btn-secondary" [ngClass]="{active : turnedOn}" (click)="powerOn()">
+                <input type="radio" name="options"  id="option1" autocomplete="off" [checked]="turnedOn">On
+              </label>
+              <label class="btn btn-secondary" [ngClass]="{active : !turnedOn}" (click)="powerOff()">
+                <input type="radio" name="options"  id="option2" autocomplete="off" [checked]="!turnedOn">Off
+              </label>  
+    </div>
+  </div>
+</div>
