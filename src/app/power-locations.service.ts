@@ -29,7 +29,7 @@ const powerLocations = [
         name: 'The third node in upper'
       }
     ],
-  }
+  },
   {
     name: 'Second',
     heatingNodeName: 'Middle',
