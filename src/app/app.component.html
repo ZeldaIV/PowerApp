@@ -1,10 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    {{ title }}
-  </h1>
-  <iframe name="loginFrame" *ngIf='isAuthenticated==false'></iframe>
-  <app-power-controls *ngIf='isAuthenticated==true'></app-power-controls>
+<div class="ng-container">
+  <mat-toolbar>
+      <span>Power control</span>
+      <span class="spacer"></span>
+      <mat-menu #appMenu="matMenu" yPosition="above">
+          <button mat-menu-item>Settings</button>
+          <button mat-menu-item>Help</button>
+        </mat-menu>
+        
+        <button mat-icon-button [matMenuTriggerFor]="appMenu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+    </mat-toolbar>
+    <iframe name="loginFrame" *ngIf='isAuthenticated==false'></iframe>
+    <app-power-controls *ngIf='isAuthenticated==true'></app-power-controls>
 </div>
-
 

@@ -1,18 +1,22 @@
-<div class="card border-light bg-light mb-3" style="width: 25rem;" *ngIf="powerLocation">
-  <div class="card-header">{{powerLocation.name}}</div>
-  <h5 class="card-title">Operation</h5>
-  <div class="row flex-row flex-nowrap align-items-center">
-    <div class="mr-auto ml-4 align-self-baselines">
-        <p>{{powerLocation.heatingNodeName}}</p>
-    </div>  
-    <div class="p-4 align-self-baseline">
-        <div class="btn-group btn-group-toggle" data-toggle="buttons" role="group">
-            <label class="btn btn-secondary" [ngClass]="{active : turnedOn}" (click)="powerOn()">
-                <input type="radio" name="options"  id="option1" autocomplete="off" [checked]="turnedOn">On
-              </label>
-              <label class="btn btn-secondary" [ngClass]="{active : !turnedOn}" (click)="powerOff()">
-                <input type="radio" name="options"  id="option2" autocomplete="off" [checked]="!turnedOn">Off
-              </label>  
-    </div>
-  </div>
-</div>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{powerLocation.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+      <mat-list>
+          <h3 mat-subheader>{{powerLocation.heatingNodeName}}</h3>
+          <mat-list-item *ngFor="let node of powerLocation.nodes">
+            <section class="example-section">
+                <span>{{node.name}}</span>
+                <mat-slide-toggle
+                      class="example-margin"
+                      [color]="primary"
+                      [checked]="checked"
+                      [disabled]="disabled">
+                  </mat-slide-toggle>
+                </section>
+                <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-list>
+  </mat-card-content>
+</mat-card>

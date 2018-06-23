@@ -1,9 +1,9 @@
-<div class="container">
-  <br/>
-  <br/>
-  <div class="row" >
-    <div class="col" id="controls" *ngFor="let location of powerLocations">
+<mat-grid-list cols="3" rowHeight="400">
+    <mat-grid-tile
+        *ngFor="let location of powerLocations"
+        [colspan]="1"
+        [rowspan]="1"
+        [style.background]="lightblue">
         <app-power-control [powerLocation]="location"></app-power-control>
-    </div>    
-  </div>
-</div>
+    </mat-grid-tile>
+  </mat-grid-list>

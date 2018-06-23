@@ -17,11 +17,45 @@ export class PowerLocationsService {
 const powerLocations = [
   {
     name: 'First',
-    heatingNodeName: 'hello' },
+    heatingNodeName: 'Upper',
+    nodes: [
+      {
+        name: 'The first node in upper'
+      },
+      {
+        name: 'The second node in upper'
+      },
+      {
+        name: 'The third node in upper'
+      }
+    ],
+  }
   {
     name: 'Second',
-    heatingNodeName: 'hello'
+    heatingNodeName: 'Middle',
+    nodes: [
+      {
+        name: 'The first node in middle'
+      },
+      {
+        name: 'The second node in upper'
+      },
+      {
+        name: 'The third node in upper'
+      }
+    ]
   }, {
     name: 'Third',
-    heatingNodeName: 'hello'
+    heatingNodeName: 'Below',
+    nodes: [
+      {
+        name: 'The first node in below'
+      },
+      {
+        name: 'The second node in upper'
+      },
+      {
+        name: 'The third node in upper'
+      }
+    ]
   }]
